@@ -2,15 +2,20 @@
 
 namespace App\Controllers;
 
-class IndexController {
+use MF\Controller\Action;
+
+class IndexController extends Action {
 
 	public function index() {
-		echo 'Chegamos ao IndexController e disparamentos a action index';
+		$this->render('Pages/index', 'index');
 	}
 
 	public function sobreNos() {
-		echo 'Chegamos ao IndexController e disparamentos a action sobreNos';
+		
+		$this->view->dados = array('Notebook', 'Smartphone');
+		$this->render('sobreNos', 'layout2');
 	}
+
 }
 
 
